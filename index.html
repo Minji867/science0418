@@ -13,13 +13,9 @@
 }
 
 body{
-    font-family:"맑은 고딕",sans-serif;
     overflow:hidden;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(180deg,#fff8dc,#ffe4b5);
+    font-family:"맑은 고딕",sans-serif;
+    background:linear-gradient(#FFF8DC,#FFE4B5);
 }
 
 /* 움직이는 만두 배경 */
@@ -28,105 +24,104 @@ body{
     width:100%;
     height:100%;
     overflow:hidden;
-    z-index:1;
+    z-index:-1;
 }
 
-.dumpling{
+.mandu{
     position:absolute;
     font-size:60px;
     animation:float linear infinite;
-    opacity:0.8;
 }
 
 @keyframes float{
-    0%{
+    from{
         transform:translateY(110vh) rotate(0deg);
     }
-    100%{
+    to{
         transform:translateY(-150px) rotate(360deg);
     }
 }
 
-/* 가운데 카드 */
+/* 메인 화면 */
+.container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
 .card{
-    position:relative;
-    z-index:10;
     background:rgba(255,255,255,0.9);
-    padding:40px 60px;
+    padding:50px;
     border-radius:25px;
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.2);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
 }
 
-/* 만두 */
-.mandu{
-    font-size:100px;
-    animation:bounce 2s infinite;
+.card h1{
+    color:#ff6b6b;
+    font-size:48px;
 }
 
-/* 싹 */
-.sprout{
-    font-size:40px;
-    display:block;
-    margin-bottom:-25px;
-    animation:grow 1.5s infinite alternate;
-}
-
-@keyframes bounce{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-10px);
-    }
-}
-
-@keyframes grow{
-    from{
-        transform:scale(1) rotate(-5deg);
-    }
-    to{
-        transform:scale(1.2) rotate(5deg);
-    }
-}
-
-h1{
-    color:#ff6f61;
-    margin-top:15px;
-    font-size:46px;
-}
-
-p{
+.card p{
     font-size:24px;
     margin-top:15px;
-    color:#444;
+}
+
+.sprout{
+    color:#2E8B57;
+    font-weight:bold;
+}
+
+/* 시작 버튼 */
+button{
+    margin-top:30px;
+    padding:15px 40px;
+    font-size:22px;
+    border:none;
+    border-radius:30px;
+    background:#ff9f43;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff6b6b;
+    transform:scale(1.08);
 }
 </style>
 </head>
 <body>
 
-<!-- 움직이는 만두 배경 -->
 <div class="background">
-    <div class="dumpling" style="left:5%;animation-duration:18s;">🥟</div>
-    <div class="dumpling" style="left:15%;animation-duration:14s;">🥟</div>
-    <div class="dumpling" style="left:28%;animation-duration:20s;">🥟</div>
-    <div class="dumpling" style="left:40%;animation-duration:16s;">🥟</div>
-    <div class="dumpling" style="left:52%;animation-duration:22s;">🥟</div>
-    <div class="dumpling" style="left:64%;animation-duration:15s;">🥟</div>
-    <div class="dumpling" style="left:76%;animation-duration:19s;">🥟</div>
-    <div class="dumpling" style="left:88%;animation-duration:17s;">🥟</div>
+    <div class="mandu" style="left:5%;animation-duration:14s;">🥟</div>
+    <div class="mandu" style="left:15%;animation-duration:18s;">🥟</div>
+    <div class="mandu" style="left:28%;animation-duration:20s;">🥟</div>
+    <div class="mandu" style="left:40%;animation-duration:15s;">🥟</div>
+    <div class="mandu" style="left:52%;animation-duration:17s;">🥟</div>
+    <div class="mandu" style="left:65%;animation-duration:21s;">🥟</div>
+    <div class="mandu" style="left:78%;animation-duration:16s;">🥟</div>
+    <div class="mandu" style="left:90%;animation-duration:19s;">🥟</div>
 </div>
 
-<!-- 메인 내용 -->
-<div class="card">
+<div class="container">
+    <div class="card">
+        <h1>🥟 만두의 방입니다.</h1>
 
-    <span class="sprout">🌱</span>
-    <div class="mandu">🥟</div>
+        <p>안녕하세요!! 👋</p>
 
-    <h1>만두의 방입니다.</h1>
-    <p>안녕하세요!!</p>
+        <p class="sprout">🌱 만두에 싹이 나서 잎이 났어요!</p>
 
+        <button onclick="startRoom()">▶ 시작하기</button>
+    </div>
 </div>
+
+<script>
+function startRoom(){
+    alert("🥟 만두의 방에 오신 것을 환영합니다! 😊");
+}
+</script>
 
 </body>
 </html>
