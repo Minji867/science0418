@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>만두의 방</title>
+<title>🥟 만두의 방</title>
 
 <style>
 *{
@@ -15,7 +15,7 @@
 body{
     overflow:hidden;
     font-family:"맑은 고딕",sans-serif;
-    background:linear-gradient(#FFF8DC,#FFE4B5);
+    background:linear-gradient(135deg,#FFF7D6,#FFE3A3,#FFF0D0);
 }
 
 /* 움직이는 만두 배경 */
@@ -30,20 +30,25 @@ body{
 .mandu{
     position:absolute;
     font-size:60px;
+    opacity:.8;
     animation:float linear infinite;
 }
 
 @keyframes float{
-    from{
-        transform:translateY(110vh) rotate(0deg);
-    }
-    to{
-        transform:translateY(-150px) rotate(360deg);
-    }
+
+0%{
+transform:translateY(110vh) rotate(0deg);
 }
 
-/* 메인 화면 */
+100%{
+transform:translateY(-150px) rotate(360deg);
+}
+
+}
+
+/* 메인 */
 .container{
+    width:100%;
     height:100vh;
     display:flex;
     justify-content:center;
@@ -51,75 +56,114 @@ body{
 }
 
 .card{
-    background:rgba(255,255,255,0.9);
-    padding:50px;
-    border-radius:25px;
+    width:650px;
     text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    padding:50px;
+    border-radius:30px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.35);
+    border:2px solid rgba(255,255,255,.5);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
-.card h1{
-    color:#ff6b6b;
-    font-size:48px;
+.logo{
+    font-size:90px;
+    animation:bounce 2s infinite;
 }
 
-.card p{
-    font-size:24px;
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+h1{
     margin-top:15px;
+    font-size:55px;
+    color:#ff6b6b;
+}
+
+.sub{
+    margin-top:20px;
+    font-size:28px;
 }
 
 .sprout{
+    margin-top:20px;
     color:#2E8B57;
+    font-size:26px;
     font-weight:bold;
 }
 
-/* 시작 버튼 */
+/* 버튼 */
 button{
-    margin-top:30px;
-    padding:15px 40px;
-    font-size:22px;
+    margin-top:40px;
+    width:250px;
+    height:70px;
     border:none;
-    border-radius:30px;
-    background:#ff9f43;
+    border-radius:50px;
+    background:linear-gradient(90deg,#ff8a00,#ff3d6e);
     color:white;
+    font-size:28px;
+    font-weight:bold;
     cursor:pointer;
-    transition:0.3s;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
 button:hover{
-    background:#ff6b6b;
-    transform:scale(1.08);
+    transform:scale(1.1);
+    box-shadow:0 0 30px #ffb347;
 }
 </style>
+
 </head>
 <body>
 
 <div class="background">
-    <div class="mandu" style="left:5%;animation-duration:14s;">🥟</div>
-    <div class="mandu" style="left:15%;animation-duration:18s;">🥟</div>
-    <div class="mandu" style="left:28%;animation-duration:20s;">🥟</div>
-    <div class="mandu" style="left:40%;animation-duration:15s;">🥟</div>
-    <div class="mandu" style="left:52%;animation-duration:17s;">🥟</div>
-    <div class="mandu" style="left:65%;animation-duration:21s;">🥟</div>
-    <div class="mandu" style="left:78%;animation-duration:16s;">🥟</div>
-    <div class="mandu" style="left:90%;animation-duration:19s;">🥟</div>
+
+<div class="mandu" style="left:3%;animation-duration:15s;">🥟</div>
+<div class="mandu" style="left:12%;animation-duration:20s;">🥟</div>
+<div class="mandu" style="left:22%;animation-duration:17s;">🥟</div>
+<div class="mandu" style="left:33%;animation-duration:22s;">🥟</div>
+<div class="mandu" style="left:45%;animation-duration:18s;">🥟</div>
+<div class="mandu" style="left:58%;animation-duration:24s;">🥟</div>
+<div class="mandu" style="left:70%;animation-duration:16s;">🥟</div>
+<div class="mandu" style="left:82%;animation-duration:19s;">🥟</div>
+<div class="mandu" style="left:93%;animation-duration:21s;">🥟</div>
+
 </div>
 
 <div class="container">
-    <div class="card">
-        <h1>🥟 만두의 방입니다.</h1>
 
-        <p>안녕하세요!! 👋</p>
+<div class="card">
 
-        <p class="sprout">🌱 만두에 싹이 나서 잎이 났어요!</p>
+<div class="logo">🌱🥟</div>
 
-        <button onclick="startRoom()">▶ 시작하기</button>
-    </div>
+<h1>만두의 방입니다.</h1>
+
+<div class="sub">
+안녕하세요!! 👋
+</div>
+
+<div class="sprout">
+🌱 만두에 싹이 나서 잎이 났어요!
+</div>
+
+<button onclick="startGame()">
+▶ 시작하기
+</button>
+
+</div>
+
 </div>
 
 <script>
-function startRoom(){
-    alert("🥟 만두의 방에 오신 것을 환영합니다! 😊");
+function startGame(){
+    alert("🥟✨ 만두의 방에 오신 것을 환영합니다! 즐거운 시간 보내세요!");
 }
 </script>
 
