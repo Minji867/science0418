@@ -168,3 +168,255 @@ document.getElementById("popup").style.display="none";
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>과학 단원</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="menu">
+
+<h1>👽 2학년 과학</h1>
+
+<div class="accordion">
+
+<button class="unit">1단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+<p>• 소단원 3</p>
+</div>
+
+<button class="unit">2단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+<button class="unit">3단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+<button class="unit">4단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+<button class="unit">5단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+<button class="unit">6단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+<button class="unit">7단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+<button class="unit">8단원</button>
+<div class="panel">
+<p>• 소단원 1</p>
+<p>• 소단원 2</p>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>body{
+
+margin:0;
+font-family:Arial;
+background:#000014;
+color:white;
+
+overflow-x:hidden;
+
+}
+
+.home{
+
+background:linear-gradient(#000014,#060635,#120046);
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.center{
+
+text-align:center;
+
+}
+
+h1{
+
+font-size:60px;
+
+text-shadow:0 0 20px cyan;
+
+}
+
+h2{
+
+color:#9cfffd;
+
+}
+
+button{
+
+padding:20px 50px;
+
+font-size:25px;
+
+border:none;
+
+border-radius:40px;
+
+background:#00ffcc;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 30px cyan;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+background:#3dff7f;
+
+}
+
+.stars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background-image:radial-gradient(white 1px,transparent 1px);
+
+background-size:40px 40px;
+
+animation:move 20s linear infinite;
+
+}
+
+@keyframes move{
+
+from{background-position:0 0;}
+
+to{background-position:0 1000px;}
+
+}
+
+.menu{
+
+padding:50px;
+
+background:linear-gradient(#020024,#090979,#000);
+
+min-height:100vh;
+
+}
+
+.unit{
+
+width:100%;
+
+margin-top:15px;
+
+background:#3b82f6;
+
+}
+
+.panel{
+
+display:none;
+
+background:#0d1b45;
+
+padding:20px;
+
+border-radius:15px;
+
+margin-bottom:10px;
+
+}
+
+.panel p{
+
+font-size:20px;
+
+}// 시작 버튼
+
+const start=document.getElementById("startBtn");
+
+if(start){
+
+start.onclick=function(){
+
+let audio=new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
+
+audio.play();
+
+setTimeout(function(){
+
+location.href="menu.html";
+
+},700);
+
+}
+
+}
+
+// 아코디언
+
+let acc=document.getElementsByClassName("unit");
+
+for(let i=0;i<acc.length;i++){
+
+acc[i].addEventListener("click",function(){
+
+this.classList.toggle("active");
+
+let panel=this.nextElementSibling;
+
+if(panel.style.display==="block"){
+
+panel.style.display="none";
+
+}else{
+
+panel.style.display="block";
+
+}
+
+});
+
+}
